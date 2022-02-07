@@ -16,19 +16,20 @@ https://github.com/joscript/user-management-api.git
 ```
 npm install
 ```
-
-4. Run the server
-
+4. Create the tables using migration
 ```
-npm run dev
-
-// After running this it will also automatically create the database tables.
+npx sequelize-cli db:migrate
 ```
-
 5. Run the seeder to populate users' table.
 
 ```
 npx sequelize-cli db:seed:all
+```
+
+6. Run the server
+
+```
+npm run dev
 ```
 
 ## API endpoints
