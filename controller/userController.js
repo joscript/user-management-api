@@ -35,7 +35,7 @@ const create = asyncHandler(async (req, res) => {
   const { body } = req;
 
   const userExist = await db.user.findOne({ where: { email: req.body.email } });
-  if (userExist) res.status(400).send("User Already Exists");
+  if (userExist) return res.status(400).send("User Already Exists");
 
   try {
     const user = await db.user.create(body);
