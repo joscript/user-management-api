@@ -15,12 +15,12 @@ app.use(express.json());
 // user routes
 app.use("/api/users", userRoutes);
 
-db.sequelize.sync().then(() => {
-  app.listen(PORT, () => {
-    console.log(
-      `listening on: http://localhost:${PORT}, Server running in ${process.env.NODE_ENV} mode`
-    );
-  });
+// db.sequelize.sync().then(() => {
+app.listen(PORT, () => {
+  console.log(
+    `listening on: http://localhost:${PORT}, Server running in ${process.env.NODE_ENV} mode`
+  );
 });
+// });
 
 module.exports = app;
